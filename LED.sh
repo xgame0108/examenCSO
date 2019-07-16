@@ -1,10 +1,14 @@
 #!/bin/bash
 # Initialisation des GPIOs. Les GPIOs nécessaires sont activés avec la commande export, puis la direction est choisie.
+
+DIR="/sys/class/gpio/gpio71"
+if [ ! -d $dir ]; then #verifie si ports non actifs
 echo "71" > /sys/class/gpio/export
-echo "out" > /sys/class/gpio/gpio71/direction
+echo "out" > /sys/class/gpio/gpio71/direction #del en sortie
 
 echo "233" > /sys/class/gpio/export
-echo "out" > /sys/class/gpio/gpio233/direction
+echo "in" > /sys/class/gpio/gpio233/direction #bouton en entree
+fi
 
 while : 
 do
