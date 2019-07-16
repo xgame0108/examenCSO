@@ -14,8 +14,8 @@ while :
 do
 if [ $(cat /sys/class/gpio/gpio233/value) -eq 0 ];
 	then 
-		echo "1" > /sys/class/gpio/gpio71/value
+		echo "1" > /sys/class/gpio/gpio71/value #DEL allume si bouton non enfonce
 	else
-		echo "0" > /sys/class/gpio/gpio71/value
+		echo "0" > /sys/class/gpio/gpio71/value #DEL eteint si bouton enfonce
 fi
 done
